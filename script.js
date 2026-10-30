@@ -1,3 +1,4 @@
+// 作品一覧
 const works = [
     {
         title: "carmine",
@@ -19,17 +20,15 @@ const works = [
 ];
 
 
+// 作品一覧を表示
 const workList = document.getElementById("work-list");
-
 
 if (workList) {
 
     works.forEach(function(work) {
 
         const card = document.createElement("div");
-
         card.className = "work-card";
-
 
         if (work.link) {
 
@@ -51,7 +50,6 @@ if (workList) {
 
         }
 
-
         workList.appendChild(card);
 
     });
@@ -60,91 +58,50 @@ if (workList) {
 
 
 
-const characters = [
-    {
-        name: "赤薔薇",
-        englishName: "Red Rose",
-        page: "red-rose.html"
-    },
+// 作品ごとのキャラクター一覧
+const characterLists = {
 
-    {
-        name: "桃薔薇",
-        englishName: "Pink Rose",
-        page: "pink-rose.html"
-    },
-
-    {
-        name: "橙薔薇",
-        englishName: "Orange Rose",
-        page: "orange-rose.html"
-    },
-
-    {
-        name: "黄薔薇",
-        englishName: "Yellow Rose",
-        page: "yellow-rose.html"
-    },
-
-    {
-        name: "緑薔薇",
-        englishName: "Green Rose",
-        page: "green-rose.html"
-    },
-
-    {
-        name: "青薔薇",
-        englishName: "Blue Rose",
-        page: "blue-rose.html"
-    },
-
-    {
-        name: "紫薔薇",
-        englishName: "Purple Rose",
-        page: "purple-rose.html"
-    },
-
-    {
-        name: "黒薔薇",
-        englishName: "Black Rose",
-        page: "black-rose.html"
-    },
-
-    {
-        name: "白薔薇",
-        englishName: "White Rose",
-        page: "white-rose.html"
-    },
-
-    {
-        name: "金薔薇",
-        englishName: "Gold Rose",
-        page: "gold-rose.html"
-    },
-
-    {
-        name: "銀薔薇",
-        englishName: "Silver Rose",
-        page: "silver-rose.html"
-    },
-
-    {
-        name: "銅薔薇",
-        englishName: "Bronze Rose",
-        page: "bronze-rose.html"
-    },
-
-    {
-        name: "虹薔薇",
-        englishName: "Rainbow Rose",
-        page: "rainbow-rose.html"
-    }
-];
+    // vindicoses
+    vindicoses: [
+        { name: "赤薔薇", englishName: "Red Rose", page: "character.html?work=vindicoses&id=red-rose" },
+        { name: "桃薔薇", englishName: "Pink Rose", page: "character.html?work=vindicoses&id=pink-rose" },
+        { name: "橙薔薇", englishName: "Orange Rose", page: "character.html?work=vindicoses&id=orange-rose" },
+        { name: "黄薔薇", englishName: "Yellow Rose", page: "character.html?work=vindicoses&id=yellow-rose" },
+        { name: "緑薔薇", englishName: "Green Rose", page: "character.html?work=vindicoses&id=green-rose" },
+        { name: "青薔薇", englishName: "Blue Rose", page: "character.html?work=vindicoses&id=blue-rose" },
+        { name: "紫薔薇", englishName: "Purple Rose", page: "character.html?work=vindicoses&id=purple-rose" },
+        { name: "黒薔薇", englishName: "Black Rose", page: "character.html?work=vindicoses&id=black-rose" },
+        { name: "白薔薇", englishName: "White Rose", page: "character.html?work=vindicoses&id=white-rose" },
+        { name: "金薔薇", englishName: "Gold Rose", page: "character.html?work=vindicoses&id=gold-rose" },
+        { name: "銀薔薇", englishName: "Silver Rose", page: "character.html?work=vindicoses&id=silver-rose" },
+        { name: "銅薔薇", englishName: "Bronze Rose", page: "character.html?work=vindicoses&id=bronze-rose" },
+        { name: "虹薔薇", englishName: "Rainbow Rose", page: "character.html?work=vindicoses&id=rainbow-rose" }
+    ],
 
 
+    // carmine
+    carmine: [
+        { name: "ルクス・ルアンダル", englishName: "Lucs Luandall", page: "character.html?work=carmine&id=Lucs" },
+        { name: "テトラ・ルアンダル", englishName: "Tetra Luandall", page: "character.html?work=carmine&id=Tetra" },
+        { name: "アカシア・ステラビート", englishName: "Acacia Stellabeat", page: "character.html?work=carmine&id=Acacia" },
+        { name: "幻覚ルクス", englishName: "Imaginary Lucs", page: "character.html?work=carmine&id=Imaginary" },
+        { name: "テトラボット", englishName: "Tetra Bot", page: "character.html?work=carmine&id=Bot" },
+    ]
+
+};
+
+
+
+// キャラクター一覧を表示
 const characterList = document.getElementById("character-list");
 
-
 if (characterList) {
+
+    // HTML側のdata-workから作品名を取得
+    const workId = document.body.dataset.work;
+
+    // 該当する作品のキャラクター一覧を取得
+    const characters = characterLists[workId] || [];
 
     characters.forEach(function(character) {
 
@@ -164,7 +121,6 @@ if (characterList) {
         link.appendChild(englishName);
 
         card.appendChild(link);
-
         characterList.appendChild(card);
 
     });
