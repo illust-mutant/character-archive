@@ -256,44 +256,40 @@ section h2 {
 @media (max-width: 600px) {
 
     body {
-        padding: 15px;
+        padding: 20px;
     }
 
     h1 {
-        font-size: 36px;
-        margin: 20px 0;
+        font-size: 44px;
+        margin: 35px 0;
     }
 
     h2 {
-        font-size: 21px;
+        font-size: 25px;
     }
 
     p {
-        font-size: 14px;
+        font-size: 17px;
     }
 
-
     /* WORK */
-
     .work-list {
         flex-direction: column;
         align-items: center;
-        gap: 15px;
+        gap: 20px;
     }
 
     .work-card {
         width: 100%;
-        max-width: 350px;
-        padding: 22px;
+        max-width: 400px;
+        padding: 25px;
     }
 
-
     /* CHARACTER LIST */
-
     .character-list {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 12px;
+        gap: 15px;
     }
 
     .character-card {
@@ -302,64 +298,58 @@ section h2 {
     }
 
     .character-image {
-        height: 180px;
-        margin-bottom: 10px;
+        height: 200px;
     }
 
-
     /* CHARACTER PROFILE */
-
     .character-profile {
         flex-direction: column;
         align-items: center;
-        gap: 20px;
+        gap: 25px;
         margin: 25px auto;
     }
 
     .profile-image {
         width: 100%;
-        max-width: 280px;
-        height: 350px;
+        max-width: 320px;
+        height: 400px;
     }
 
     .profile-info {
         width: 100%;
-        max-width: 350px;
+        max-width: 400px;
     }
 
-
     /* SECTION */
-
     section {
+        margin: 40px auto;
+    }
+
+    /* MENU */
+    .menu-card {
+        width: 100%;
+        max-width: 500px;
         margin: 35px auto;
     }
 
-    section h2 {
-        padding-bottom: 8px;
-    }
-
-
-    /* MENU */
-
-    .menu-card {
-        width: 100%;
-        margin: 25px auto;
-    }
-
     .menu-title {
-        gap: 10px;
+        gap: 15px;
     }
 
     .menu-title span {
-        width: 30px;
-    }
-
-    .menu-card:hover .menu-title span {
-        width: 45px;
+        width: 55px;
     }
 
     .menu-title h3 {
-        font-size: 17px;
+        font-size: 21px;
     }
 
+    .menu-card p {
+        font-size: 17px;
+        margin-top: 12px;
+    }
+
+    .menu-card:hover .menu-title span {
+        width: 55px;
+    }
 }
