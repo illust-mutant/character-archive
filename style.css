@@ -41,6 +41,9 @@ a:hover {
     color: #ff6699;
 }
 
+#character-history {
+    white-space: pre-wrap;
+}
 
 /* =========================
    WORK LIST
