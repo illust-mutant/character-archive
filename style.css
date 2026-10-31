@@ -356,3 +356,41 @@ section h2 {
         width: 55px;
     }
 }
+
+/* 隠しキャラクター演出 */
+#secret-character {
+    position: fixed;
+    bottom: -300px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    pointer-events: none;
+}
+
+#secret-character img {
+    width: 200px;
+    height: auto;
+}
+
+/* 飛び出すアニメーション */
+#secret-character.show {
+    animation: secretJump 1.2s ease-in-out;
+}
+
+@keyframes secretJump {
+    0% {
+        bottom: -300px;
+    }
+
+    25% {
+        bottom: 0;
+    }
+
+    65% {
+        bottom: 0;
+    }
+
+    100% {
+        bottom: -300px;
+    }
+}

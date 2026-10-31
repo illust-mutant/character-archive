@@ -126,3 +126,64 @@ if (characterList) {
     });
 
 }
+
+// 隠しキャラクター設定
+const secretCharacters = {
+    "tetra": "images/secret/tetra.png"
+};
+
+let secretInput = "";
+
+document.addEventListener("keydown", function(event) {
+
+    // Ctrlなどの特殊キーは無視
+    if (event.ctrlKey || event.altKey || event.metaKey) return;
+
+    // 英字以外は無視
+    if (!/^[a-zA-Z]$/.test(event.key)) return;
+
+    secretInput += event.key.toLowerCase();
+
+    // 入力が長くなりすぎないようにする
+    if (secretInput.length > 30) {
+        secretInput = secretInput.slice(-30);
+    }
+
+    // キャラクター名と照合
+    for (const name in secretCharacters) {
+
+        if (secretInput.endsWith(name)) {
+
+            showSecretCharacter(secretCharacters[name]);
+
+            secretInput = "";
+            break;
+        }
+    }
+});
+
+function showSecretCharacter(imagePath) {
+
+    const container = document.getElementById("secret-character");
+    const image = document.getElementById("secret-character-image");
+
+    // HTML要素が存在しなければ終了
+    if (!container || !image) return;
+
+    // アニメーション中なら再生し直さない
+    if (container.classList.contains("show")) return;
+
+    // 画像を読み込む
+    image.src = new URL(imagePath, document.baseURI).href;
+
+    container.classList.remove("show");
+
+    // アニメーションを再実行
+    void container.offsetWidth;
+
+    container.classList.add("show");
+
+    setTimeout(() => {
+        container.classList.remove("show");
+    }, 1200);
+}
